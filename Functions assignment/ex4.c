@@ -1,20 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include<string.h>
+int power(int num,int power_num)
+{
+	if(power_num==0)
+	return 1;
+	else
+	return num*power(num,power_num-1);
+}
 int main(void) {
-	int n;
-	printf("Enter the numbers of data: ");
+	int num;
+	int power_num;
+	printf("Enter base number: ");
 	fflush(stdout);
-	scanf("%d",&n);
-	int arr[n];
-	float sum=0;
-	for(int i=0;i<n;i++)
-	{
-		printf("Enter number: ");
-		fflush(stdout);
-		scanf("%d",&arr[i]);
-		sum=sum+arr[i];
-	}
-	printf("Average = %f",sum/n);
+	scanf("%d",&num);
+	printf("Enter power number: ");
+	fflush(stdout);
+	scanf("%d",&power_num);
+	printf("%d ^ %d = %d",num,power_num,power(num,power_num));
+
 	return 0;
 }
